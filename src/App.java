@@ -6,14 +6,14 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 */
-
+/*
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+*/
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -39,7 +39,7 @@ public class App {
         }
 
     */
-
+/*
          // Database credentials
         String url = "jdbc:mariadb://localhost:3306/testjava"; // Use your database name
         String user = "root"; // XAMPP's default user
@@ -70,6 +70,24 @@ public class App {
             System.err.println("Database connection failed: " + e.getMessage());
             e.printStackTrace();
         }
+*/
+
+        MariaDBConnection cn = new MariaDBConnection();
+        String insertSQL = "INSERT INTO users (name, email) VALUES ('Jon Poe', 'jon.poe@example.com')";        
+        cn.createStatement(insertSQL);
+
+        String selectSQL = "SELECT id, name, email FROM users";
+        cn.selectStatement(selectSQL);
+
+        String deletetSQL = "DELETE FROM users WHERE id = 8";        
+        cn.deleteStatement(deletetSQL);
+
+        String updateSQL = "UPDATE users SET name ='Nibeer' WHERE id = 5";        
+        cn.updateStatement(updateSQL);
+
+        //String selectSQL = "SELECT id, name, email FROM users";
+        cn.selectStatement(selectSQL);
+
 
     }
 }
