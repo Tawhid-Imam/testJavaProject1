@@ -8,6 +8,10 @@ public class App {
         obj1.show();
 
         Showable obj2 = new Showable();
+        obj2.show();
         obj2.show(" This is From Show!!!");
+
+
+
     }
 }
